@@ -7,11 +7,11 @@ jobs:
       - image: circleci/node:13.8.0
     steps:
       - checkout
-      - npm install
+      - npm i
       - save_cache:
           key: npm-packages
           paths:
-            - /src/node_modules/
+            - /src/node_modules
       - run:
           name: "Running lint"
           command: npm run lint
@@ -23,7 +23,7 @@ jobs:
       - restore_cache:
           keys:
             - "npm-packages"
-      - npm install
+      - npm i
       - run:
           name: "Running test"
           command: npm run test
@@ -35,7 +35,7 @@ jobs:
       - restore_cache:
           keys:
             - "npm-packaes"
-      - run: npm install
+      - run: npm i
       - run:
           name: "Running analyze"
           command: npm audit

@@ -23,7 +23,7 @@ jobs:
       - restore_cache:
           keys:
             - "npm-packages"
-      - npm i
+      - run: npm i
       - run:
           name: "Running test"
           command: npm run test
